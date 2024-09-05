@@ -56,7 +56,6 @@ body {
 
 .profile-container {
     position: relative;
-    display: inline;
 }
 
 .profile-img {
@@ -97,6 +96,26 @@ body {
     display: flex;
     gap:16px;
     justify-content: flex-end;
+}
+
+@media (max-width: 900px) and (min-width: 500px) {
+    .about-icons > * {
+        display: none;
+    }
+
+    .top {
+        display: block;
+    }
+
+    .profile-container {
+        float:inline-start;
+    }
+
+    .profile-img {
+        height: 200px;
+    }
+
+    .about-container {}
 }
 
 .icon-med {
