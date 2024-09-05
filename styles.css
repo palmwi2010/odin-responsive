@@ -2,8 +2,212 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
 }
 
-p {
-    color: red;
+:root {
+    --content-margin: 64px;
+    --theme-color: #0891b2;
+    --body-text-shade: #475569;
+}
+
+@media (max-width: 500px) {
+    :root {
+        --content-margin: 16px;
+    }
+}
+
+@font-face {
+    font-family: 'Playfair';
+    src: url('./fonts/PlayfairDisplay-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Regular.ttf');
+}
+
+body {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Top content */
+
+.background-top {
+    position: absolute;
+    top: 0;
+    background-color: var(--theme-color);
+    height:2000px;
+    width:150%;
+    z-index: -1;
+    transform: translate(-25%, -75%) rotate(-12deg);
+    overflow: hidden;
+    box-shadow: 0 2px 6px 0 darkgray;
+}
+
+.top {
+    margin: 0 var(--content-margin);
+    padding-top: var(--content-margin);
+    align-items: center;
+    display: flex;
+}
+
+.profile-container {
+    position: relative;
+    display: inline;
+}
+
+.profile-img {
+    width: auto;
+    height: 600px;
+    box-shadow: 2px 2px 6px 0 black;
+}
+
+.img-inset {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    font-size: 50px;
+    font-family: 'Playfair';
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+}
+
+/* About me */
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    box-shadow: 2px 2px 10px 0 darkgray;
+    padding: 24px 24px 16px 16px;
+    background-color: white;
+}
+
+.about-description {
+    font-size: 16px;
+    color: var(--body-text-shade);
+}
+
+.about-icons {
+    padding-top: 24px;
+    display: flex;
+    gap:16px;
+    justify-content: flex-end;
+}
+
+.icon-med {
+    width: 30px;
+}
+
+/* Main content */
+
+.main {
+    margin: var(--content-margin);
+}
+
+.main-title {
+    padding: 8px 0;
+    font-family: 'Playfair';
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.icon {
+    width: 20px;
+}
+
+.card-container {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .main-title {
+        text-align: center;
+    }
+}
+
+.card {
+    box-shadow: 2px 2px 10px 0 darkgray;
+}
+
+.screenshot {
+    width: 100%;
+    aspect-ratio: 3/2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+    font-family: 'Playfair';
+    padding: 0 32px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.screenshot-text {
+    color: white;
+    margin: 0 32px;
+    text-align: center;
+}
+
+.card:nth-child(1) .screenshot {
+    background-color: red;
+}
+.card:nth-child(2) .screenshot {
+    background-color: purple;
+}
+.card:nth-child(3) .screenshot  {
+    background-color: green;
+}
+.card:nth-child(4) .screenshot  {
+    background-color: pink;
+}
+.card:nth-child(5) .screenshot  {
+    background-color: orange;
+}
+.card:nth-child(6) .screenshot  {
+    background-color: teal;
+}
+
+.card-body {
+    margin: 0 16px;
+    min-height: 150px;
+}
+
+.card-header-row {
+    display: flex;
+    gap: 16px;
+    margin: 12px 0;
+    align-items: center;
+    font-size: 20px;
+}
+
+.card-name {
+    margin-right: auto;
+    font-family: 'Playfair';
+    font-weight: 300;
+}
+
+.card-description {
+    font-size: 14px;
+    color: var(--body-text-shade);
+}
+
+.icon:hover, .icon-med:hover {
+    cursor: pointer;
 }
