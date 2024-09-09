@@ -40,16 +40,21 @@ body {
 
 /* Top content */
 
+.wrapper {
+    position: relative;
+}
+
 .background-top {
     position: absolute;
     top: 0;
     background-color: var(--theme-color);
-    height:2000px;
-    width:200%;
+    height: 100%;
+    width:100%;
     z-index: -1;
-    transform: translate(-25%, -75%) rotate(-12deg);
     overflow: hidden;
     box-shadow: 0 2px 6px 0 darkgray;
+    transform: skewY(-15deg);
+    transform-origin: 0;
 }
 
 .top {
@@ -101,10 +106,6 @@ body {
 }
 
 @media (max-width: 900px) and (min-width: 500px) {
-    .background-top {
-        transform: translate(-50%, -75%) rotate(-12deg);
-    }
-
     .top {
         display: block;
     }
@@ -146,8 +147,7 @@ body {
     }
 
     .background-top {
-        transform: translate(-80%, -75%) rotate(-12deg);
-        width: 2000px;
+        height: 50%;
     }
 
     .profile-container {
